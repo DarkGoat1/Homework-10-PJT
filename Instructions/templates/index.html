@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Memes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">Mission to Mars!</h1>
+    <div>
+      <h2>Latest Mars Headlines:</h2>
+      <ul style="list-style: none;">
+        {% for x in marsdict.titles %}
+          <li>{{ x }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>  
+  <div>
+    <h2>Featured Image:</h2>
+      <img src= "{{ marsdict.imageURL }}" alt="FeaturedImg">
+  </div>
+  <div class="container text-center">
+    <h2>Current Weather on Mars</h2>
+      <p>{{ marsdict.MarsTemperature }}</p>
+  </div>
+  <div class="container text-center">
+    <h2>Mars Facts:</h2>
+      <table style="width:50%">
+        <th>Mars Facts Table</th>
+        {% for x in marsdict.MarsInfo %}
+          <tr>
+            <td>{{ x }}</td>
+          </tr>  
+        {% endfor %}
+      </table>
+  </div>
+</body>
+
+</html>
